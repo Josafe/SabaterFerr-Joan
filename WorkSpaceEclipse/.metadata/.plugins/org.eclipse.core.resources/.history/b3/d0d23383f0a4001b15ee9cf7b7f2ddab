@@ -1,0 +1,85 @@
+/*CAS PRÀCTIC - FITXERS
+MiniTerminal & MiniFileManager
+Implementa un programa que funcione com una xicoteta terminal Linux amb alguns comandos
+(simplificats) que permeten a l'usuari realitzar diferents operacions de gestió d'arxius. Els comandos
+que l'usuari podrà executar són:
+1 pwd: Mostra quina és la carpeta actual.
+2 cd <DIR>: Canvia la carpeta actual a ‘DIR’. Amb .. canvia a la carpeta superior.
+3 ls: Mostra la llista de directoris i arxius de la carpeta actual (primer directoris, després arxius,
+tots dos ordenats alfabèticament).
+4 ll: Com ls però mostra també la grandària i la data d'última modificació.
+5 mkdir <DIR>: Crea el directori ‘DIR’ en la carpeta actual.
+6 rm <FILE>: Esborra ‘FILE’. Si és una carpeta, esborrarà primer els seus arxius i després la
+carpeta. Si té subcarpetes, les deixarà intactes i mostrarà un avís a l'usuari.
+7 mv <FILE1> <FILE2>: Mou o canvia de nom ‘FILE1’ a ‘FILE2’.
+8 help: Mostra una breu ajuda amb els comandos disponibles.
+9 exit: Acaba el programa.
+Classe MiniTerminal: Classe principal (amb funció main) que s'encarregarà d'interactuar amb
+l'usuari i interpretar els comandos (quin comando es demana, arguments, etc.). Utilitzarà la segona
+classe per a realitzar les operacions de gestió d'arxius. Manejarà totes les possibles excepcions.
+Classe MiniFileManager: Tindrà els atributs i mètodes que necessites per a realitzar les diferents
+operacions relacionades amb la gestió d'arxius. Necessitaràs almenys un mètode per cada operació.
+Es llançará una excepció si es produeix un error o l'operació sol·licitada no és possible. Alguns
+exemples que podries implementar:
+1 String getPWD(): Retorna una cadena de text amb la carpeta actual.
+2 boolean changeDir(String dir): Canvia la carpeta actual a dir . Retorna ‘true’ si és possible.
+3 void printList(boolean info): Mostra una llista amb els directoris i arxius de la carpeta actual.
+Si info és ‘true’ mostrarà també la seua grandària i data de modificació.
+4 etc.*/
+package casPractic;
+import java.util.Scanner;
+import java.io.File;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner llegir = new Scanner(System.in);
+		
+		MiniFileManager terminal = new MiniFileManager();
+		
+		String sw = "";
+		String[] vector;
+		
+		System.out.println("Introdueix la ruta que vulgues accedir-hi");
+		
+		do {
+			
+		System.out.println("Joan@IesBenigaslo.es");
+		vector = (llegir.nextLine()).split(" ");
+		
+		sw = vector[0];
+			System.out.println(sw);
+		switch(sw) {
+		case "pwd": //"PWD"
+			terminal.getpwd();
+			break;
+		case "cd": //"cd"
+			terminal.getcd(vector[0]);
+			break;
+		case "ls": //"ls"
+			terminal.getls(vector);
+			break;
+		case "ll": //"ll"
+			terminal.getll(vector[0]);
+			break;
+		case "mkdir": //"mkdir"
+			terminal.getmkdir(vector[1]);
+			break;
+		case "rm": //"rm"
+			terminal.getremove(vector[0]);
+			break;
+		case "mv": //"mv"
+			terminal.getmv(vector[1]);
+			break;
+		case "help": //"help"
+			System.out.println(terminal.gethelp());
+			break;
+		case "exit": //"exit"
+			break;		
+		}
+		} while (!sw.equals("exit")); {
+			
+		}
+	}
+}
+

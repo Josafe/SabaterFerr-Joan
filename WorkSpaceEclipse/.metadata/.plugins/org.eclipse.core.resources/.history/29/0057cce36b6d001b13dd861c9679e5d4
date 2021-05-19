@@ -1,0 +1,10 @@
+package examensEncapsulacio;
+
+public class ControladorExamens {
+
+	public static void main(String[] args) {
+		
+		ControladorExamens examen1 = new ControladorExamens("Matematiques" , "2nB" ,setHora("4:30"), setDia("03/03/2021"));
+		
+	}
+}

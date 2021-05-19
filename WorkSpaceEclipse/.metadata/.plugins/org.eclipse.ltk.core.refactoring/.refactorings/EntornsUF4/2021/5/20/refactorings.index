@@ -1,0 +1,4 @@
+1621243437406	Rename type 'CalculFecha'
+1621244993472	Extract constant 'Introdueix_un_dia_modificat'
+1621245060241	Extract constant 'INTRODUEIX_UN_DIA_MODIFICAT2'
+1621245214086	Inline constant 'INTRODUEIX_UN_DIA_MODIFICAT2'

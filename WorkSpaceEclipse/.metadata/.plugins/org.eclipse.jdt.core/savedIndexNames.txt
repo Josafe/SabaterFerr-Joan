@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\Josafe\Desktop\CFGS Disseny d'aplicacions multiplataforma\Java\WorkSpaceEclipse\.metadata\.plugins\org.eclipse.jdt.core
+1417105730.index
+2872044937.index
+3333790703.index
+3834732554.index
+1988192383.index
+4098480365.index
+1330038107.index
+2841231617.index
+1570852477.index

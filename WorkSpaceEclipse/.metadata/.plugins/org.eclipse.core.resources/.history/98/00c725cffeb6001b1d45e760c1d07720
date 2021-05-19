@@ -1,0 +1,134 @@
+package ProvaTextField;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.*;
+import javax.swing.*;
+public class ProvaTextField extends JFrame {
+
+	
+	public ProvaTextField() {
+		
+		
+		//Marco
+		setSize(600,450);
+		setTitle("Enquesta");
+		setLocation(400,200);
+				
+				
+		//Etiquetes de text
+		JLabel nom = new JLabel();
+		nom.setText("Nom");
+		JTextField txtNom = new JTextField(10);
+		
+		JLabel cognoms = new JLabel();
+		cognoms.setText("Cognoms");
+		JTextField txtCognom = new JTextField(20);
+		
+		//Boton
+		JButton majorMenor = new JButton();
+		majorMenor.setText("Ets major de 18 anys?");
+		JTextField MajorMenor = new JTextField(20);
+	
+		//Caselles amb 1 o mes opcions
+		JCheckBox esport = new JCheckBox();
+		esport.setText("Futbol");
+		esport.setText("Basquet");
+		esport.setText("Natacion");
+		esport.setText("Hockey");
+		
+		//Caselles unica opcio
+		JRadioButton fumador = new JRadioButton();
+		fumador.setText("Si");
+		fumador.setText("No");
+		
+		//Llista d'elements
+		
+		JComboBox llista = new JComboBox();
+		llista.addItem("Si");
+		llista.addItem("No");
+		llista.addItem("Hola");
+		llista.addItem("Adeu");
+		
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.LIGHT_GRAY);
+		
+		//Container on almacenem els components atomics
+		Container contenidor = getContentPane();
+		
+		panel.add(nom);
+		panel.add(txtNom);
+		panel.add(cognoms);
+		panel.add(txtCognom);
+		panel.add(majorMenor);
+		panel.add(MajorMenor);
+		panel.add(esport);
+		panel.add(fumador);
+		panel.add(llista);
+		
+		contenidor.add(panel);
+		
+		setVisible(true);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+	//Declarem els events que permet el actionPerformed
+		JButton boto = new JButton();
+		JList llista = new JList();
+		JMenuItem menu = new JMenuItem();
+		JTextField foco = new JTextField();
+	}
+	
+	//Quan prenem una tecla amb el KeyListener pot realitzar els seguents events:
+	public void keyTyped(KeyEvent e) {
+		
+	}
+	public void keyPressed(KeyEvent e) {
+		
+	}
+	public void keyReleased(KeyEvent e) {
+		
+	}
+	//Els events que permet el FocusListener es quan un component perd o guanya el foco
+	public void focusGained(FocusEvent e) {
+		
+	}
+	public void focusLost(FocusEvent e) {
+		
+	}
+	
+	//Els events que permet el MouseListener
+	public void mouseClicked(MouseEvent e) {
+		
+	}
+	public void mouseEntered(MouseEvent e) {
+		
+	}
+	public void mouseExited(MouseEvent e) {
+		
+	}
+	public void mousePressed(MouseEvent e) {
+	
+	}
+	public void mouseReleased(MouseEvent e) {
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		SwingUtilities.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				new ProvaTextField();
+				
+			}
+		});
+	}
+}
